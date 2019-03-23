@@ -7,25 +7,15 @@
             <h1><a href="/">Django Girls' Blog</a></h1>
         </div>
         <div>
-            <p>published: 22.03.2019, 20:00</p>
-            <h2><a href="">My first post</a></h2>
-            <p>This evening, we installed Python on our computers, I found out about virtual environents and that
-                I had to reinstall Django, but not Git because Git is external and so it'd still work.
-                Tomorrow is an earlier start than a work day. See you in my second post.
-            </p>
+            {% for post in posts %}
+                <div>
+                    <p>published: {{ post.published_date }}</p>
+                    <h2><a href="">{{ post.title }}</a></h2>
+                    <p>{{ post.text|linebreaksbr }} </p>
+                </div>
+            {% endfor %}
+
         </div>
-
-        <div>
-            <p>published: 23.03.2019, 15:24</p>
-            <h2><a href=""> My second post</a></h2>
-            <p>I think my mum and I were the latest people to the course this morning.
-                Today, I learned about how DNSs communicate with each other to return letters from the requested IP address
-                of the site you enter.
-
-                I also learned that Django is a library which is useful because it's basically a set of pre-defined functions that
-                people need on the daily, which they won't have to keep re-defining.
-            </p>
-    </div>
 
 
     </body>
